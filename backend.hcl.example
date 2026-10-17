@@ -1,0 +1,11 @@
+# Example partial backend configuration. Copy to backend.<env>.hcl and fill in.
+# Usage: terraform init -backend-config=backend.dev.hcl
+#
+# NOTE: the state bucket and lock table must exist before init. Create them
+# once per AWS account/region (e.g. via the bootstrap snippet in docs/runbook.md).
+
+bucket         = "REPLACE-ME-terraform-state"
+key            = "delta-lake-streaming-platform/dev/terraform.tfstate"
+region         = "us-east-1"
+dynamodb_table = "REPLACE-ME-terraform-state-lock"
+encrypt        = true
