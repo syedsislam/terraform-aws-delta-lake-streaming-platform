@@ -1,0 +1,15 @@
+# =============================================================================
+# Example variable values. Copy to terraform.tfvars and adjust.
+# NEVER commit real secrets — credentials are generated and stored in
+# Secrets Manager by the rds-mssql and msk modules.
+# =============================================================================
+
+environment = "dev"
+owner       = "your-team@example.com"
+aws_region  = "us-east-1"
+
+# Optional: override the generated bucket name (must be globally unique)
+# data_lake_bucket_name = "my-company-delta-lake-dev"
+
+# CDC tables replicated from SQL Server (schema.table)
+cdc_tables = ["dbo.orders", "dbo.customers", "dbo.products"]
